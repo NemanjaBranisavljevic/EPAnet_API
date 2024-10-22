@@ -292,6 +292,7 @@ Alternatively, you can manually select the appropriate installation file from [G
 
 ```markdown
 # EXAMPLES OF API USAGE
+```
 
 Loading a *.INP file into the data structure of the EPANetModel class:
 ```python

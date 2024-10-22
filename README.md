@@ -1,21 +1,7 @@
 # EPANetPY API Guide
 
 ## Introduction
-EPANet is a software solution for mathematical modeling of pressurized networks. Figure 1 illustrates the process of mathematical modeling using EPANet. Input data is stored in an input file (with a *.INP extension), while the simulation results (where the simulation involves running the model with a single version of input data) are written to an output file (with a *.RPT extension).
-
-![Modeling with EPANet software package](image1.png)
-
-Figure 1: Modeling using the EPANet software package
-
-In Figure 2, examples of the *.INP input file (A) for the EPANet mathematical model and the *.RPT file with simulation results (B) are shown.
-
-|   A   |   B   |
-|-------|-------|
-| ![Example of input file](image2a.png) | ![Example of results file](image2b.png) |
-
-Figure 2: Examples of the input file and the results file for the EPANet mathematical model
-
-Figure 3 shows the API structure. The core of the API is represented by the `EPANetModel` class with the following methods:
+EPANet is a software solution for mathematical modeling of pressurized networks. Input data is stored in an input file (with a *.INP extension), while the simulation results (where the simulation involves running the model with a single version of input data) are written to an output file (with a *.RPT extension).
 
 - `readINP(filenameINP)` – loads data from the *.INP file into the class's data structure
 - `writeINP(filenameINP)` – creates the *.INP file and populates it with data from the class's data structure
@@ -25,10 +11,6 @@ Figure 3 shows the API structure. The core of the API is represented by the `EPA
 - `pushRPT(SERVER, UID, PWD, DATABASE_NAME)` - forms and populates the appropriate tables in the MSSQL Server database from the class's data structure
 - `retrieveRPT(SERVER, UID, PWD, DATABASE_NAME)` - loads simulation results from the MSSQL Server database into the class's data structure
 - `runINP(EPANet, INPfile, RPTfile, OUTfile="")` – runs a simulation with data from the corresponding *.INP file and creates a *.RPT file with simulation results
-
-![API Structure](image3.png)
-
-Figure 3: API structure and its communication with the MSSQL Server database
 
 The data structure in the `EPANetModel` class consists of lists and associative tables that store all data needed for simulation in the EPANet software package. The data structure in the `EPANetModel` class includes the following components:
 
